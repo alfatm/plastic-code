@@ -1,0 +1,59 @@
+{
+  "name": "plastic-code",
+  "displayName": "Plastic Code",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plastic theme with warm syntax colors, for VS Code, Zed and Neovim.",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "plastic"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alfatm/plastic-code"
+  },
+  "bugs": {
+    "url": "https://github.com/alfatm/plastic-code/issues"
+  },
+  "publisher": "alfatm",
+  "type": "module",
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=24",
+    "vscode": "^1.100.0"
+  },
+  "scripts": {
+    "generate": "node src/index.ts",
+    "check": "tsc --noEmit && biome check && node scripts/validate-zed.ts",
+    "package": "vsce package --no-dependencies",
+    "publish:vscode": "vsce publish --no-dependencies",
+    "publish:ovsx": "ovsx publish --no-dependencies"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Plastic Code",
+        "uiTheme": "vs-dark",
+        "path": "./themes/plastic-code.json"
+      },
+      {
+        "label": "Plastic Code - deprioritised punctuation",
+        "uiTheme": "vs-dark",
+        "path": "./themes/plastic-code-deprioritised.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "26.6.5",
+    "@vscode/vsce": "4.0.0",
+    "ajv": "8.20.0",
+    "ovsx": "1.2.0",
+    "typescript": "7.0.2"
+  }
+}

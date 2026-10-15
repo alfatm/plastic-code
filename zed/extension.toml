@@ -1,0 +1,7 @@
+id = "plastic-code"
+name = "Plastic Code"
+version = "0.1.0"
+schema_version = 1
+authors = ["alfatm"]
+description = "Plastic theme with warm syntax colors."
+repository = "https://github.com/alfatm/plastic-code"

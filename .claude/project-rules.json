@@ -1,0 +1,26 @@
+{
+  "last_checked_at": "2026-10-15",
+  "sources": [
+    "README.md",
+    "package.json",
+    "biome.json",
+    "tsconfig.json",
+    "pnpm-workspace.yaml"
+  ],
+  "runtime": "Node >= 24, TypeScript run directly via native type stripping (no tsx/build step)",
+  "package_manager": "pnpm 12 via corepack (packageManager field)",
+  "commands": {
+    "generate": "pnpm generate",
+    "check": "pnpm check",
+    "package_vscode": "pnpm package"
+  },
+  "rules": [
+    "All theme outputs (themes/, zed/themes/, colors/) are generated from src/ and committed; never edit them by hand.",
+    "Run `pnpm generate && pnpm check` after any change in src/.",
+    "Relative imports use explicit .ts extensions; only erasable TypeScript syntax (no enums/namespaces).",
+    "Formatting and lint: Biome (single quotes, no semicolons, 2-space indent).",
+    "No runtime dependencies; keep devDependencies minimal and pinned.",
+    "Zed themes must define every key of Zed's built-in baseline, otherwise One Dark values leak in.",
+    "Keep version in package.json and zed/extension.toml in sync."
+  ]
+}
